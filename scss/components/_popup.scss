@@ -49,6 +49,8 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(.25);
     transition: all .4s .2s;
+
+
   }
 
   &__left {
@@ -79,5 +81,71 @@
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+  }
+
+
+
+  
+  @include respond(tab-land) {
+  
+    &__close {
+      &:link,
+      &:visited {
+        color: $color-grey-dark;
+        position: absolute;
+        top:1.5rem;
+        right: 2.5rem;
+        font-size: 4rem;
+        text-decoration: none;
+        line-height: 1;
+      }
+  
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  
+    &__content {
+      @include centerHorizontalVertical;
+      width: 75%;
+      background-color: $color-white;
+      box-shadow: 0 2rem 4rem rgba($color-black, .2);
+      border-radius: 3px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.25);
+      transition: all .4s .2s;
+      display: block;
+      position: relative;
+  
+    }
+  
+    &__left {
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: -2%;
+      left:0;
+    }
+  
+    &__right {  
+      width: 100%;
+      display: block;
+      padding: 3rem 5rem;
+      position: relative;
+      padding-bottom: 40%;
+    }
+  
+    &__img {
+      float: left;
+      display:block;
+      width:50%;
+    }
+  
+    &__text {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      column-count: 1;
+    }
   }
 }
